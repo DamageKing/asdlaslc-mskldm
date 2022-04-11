@@ -59,7 +59,8 @@ while True:
     print(cy+'[5] Spesifik Hesapları Sil'+n)
     print(cy+'[6] Yorum Botu'+n)
     print(cy+"[7] Otomatik Api Al")
-    print(cy+'[8] Çık')
+    print(cy+"[8] Yazılımı Güncelle")
+    print(cy+'[9] Çık')
     a = int(input(lg+f'\nSeçiniz: {r}'))
     if a == 1:
         with open('zhesap.txt', 'ab') as g:
@@ -351,8 +352,47 @@ while True:
         else:
             print("[!] Bir Hata Oluştu.")
             exit(1)
-
-    if a == 8:
+    elif a == 8:
+        verson = '4.2'
+        print(f'\n{lg}[i] Checking for updates...')
+        try:
+            version = requests.get('https://raw.githubusercontent.com/DamageKing/asdlaslc-mskldm/main/version.txt')
+        except:
+            print(f'{r} İnternete Bağlı Değilsiniz')
+            print(f'{r} Bağlanıp Tekrar Deneyiniz')
+            exit()
+        if float(version.text) > verson:
+            prompt = str(input(f'{lg}[~] Güncelleme Bulundu[Version {version.text}]. Download?[y/n]: {r}'))
+            if prompt == 'y' or prompt == 'yes' or prompt == 'Y':
+                print(f'{lg}[i] Downloading updates...')
+                if os.name == 'nt':
+                    os.system('del ekleyici.py')
+                    os.system('del isim.py')
+                    os.system('del menu.py')
+                    os.system('del usradder.py')
+                    os.system('del uyecekici.py')
+                else:
+                    os.system('rm ekleyici.py')
+                    os.system('rm isim.py')
+                    os.system('rm menu.py')
+                    os.system('rm usradder.py')
+                    os.system('rm uyecekici.py')
+                #os.system('del scraper.py')
+                os.system('curl -l -O https://raw.githubusercontent.com/DamageKing/asdlaslc-mskldm/main/ekleyici.py')
+                os.system('curl -l -O https://raw.githubusercontent.com/DamageKing/asdlaslc-mskldm/main/isim.py')
+                os.system('curl -l -O https://raw.githubusercontent.com/DamageKing/asdlaslc-mskldm/main/menu.py')
+                os.system('curl -l -O https://raw.githubusercontent.com/DamageKing/asdlaslc-mskldm/main/usradder.py')
+                os.system('curl -l -O https://raw.githubusercontent.com/DamageKing/asdlaslc-mskldm/main/uyecekici.py')
+                print(f'{gr}[*] Updated to version: {version.text}')
+                input('Press enter to exit...')
+                exit()
+            else:
+                print(f'{lg}[!] Update aborted.')
+                input('Press enter to goto main menu...')
+        else:
+            print(f'{lg}[i] Your Astra is already up to date')
+            input('Press enter to goto main menu...')
+    if a == 9:
         clr()
         banner()
         quit()
