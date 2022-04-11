@@ -390,7 +390,7 @@ while True:
                 print(f'{lg}[!] Update aborted.')
                 input('Press enter to goto main menu...')
         else:
-            print(f'{lg}[i] Your Astra is already up to date')
+            print(f'{lg}[i] Yazılımınız Zaten Güncel')
             input('Press enter to goto main menu...')
     if a == 9:
         clr()
