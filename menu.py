@@ -38,7 +38,7 @@ def banner():
     f = pyfiglet.Figlet(font='slant')
     banner = f.renderText('TELEGRAM')
     print(f'{random.choice(colors)}{banner}{n}')
-    print(r+'  Versiyon: 4.1 | Yapımcı: ArdaBarut'+n+'\n')
+    print(r+'  Versiyon: 4.5 | Yapımcı: ArdaBarut'+n+'\n')
 
 
 def clr():
@@ -353,7 +353,7 @@ while True:
             print("[!] Bir Hata Oluştu.")
             exit(1)
     elif a == 8:
-        verson = '4.2'
+        verson = 4.5
         print(f'\n{lg}[i] Checking for updates...')
         try:
             version = requests.get('https://raw.githubusercontent.com/DamageKing/asdlaslc-mskldm/main/version.txt')
@@ -364,7 +364,7 @@ while True:
         if float(version.text) > verson:
             prompt = str(input(f'{lg}[~] Güncelleme Bulundu[Version {version.text}]. Download?[y/n]: {r}'))
             if prompt == 'y' or prompt == 'yes' or prompt == 'Y':
-                print(f'{lg}[i] Downloading updates...')
+                print(f'{lg}[i] Güncelleme Yükleniyor...')
                 if os.name == 'nt':
                     os.system('del ekleyici.py')
                     os.system('del isim.py')
