@@ -1,0 +1,7 @@
+telethon
+keyboard
+colorama
+pyfiglet
+bs4
+asyncio
+requests
