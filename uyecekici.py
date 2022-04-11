@@ -46,7 +46,7 @@ def clr():
 
 clr()
 banner()
-print(f'  {r}Versiyon: {w}4.1 {r}| Yapımcı: {w}ArdaBarut{rs}\n')
+print(f'  {r}Versiyon: {w}4.5 {r}| Yapımcı: {w}ArdaBarut{rs}\n')
 f = open('zhesap.txt', 'rb')
 accs = []
 while True:
