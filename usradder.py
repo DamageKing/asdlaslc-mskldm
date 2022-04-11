@@ -82,9 +82,9 @@ added_users = []
 for user in users:
     n += 1
     added_users.append(user)
-    if n % 50 == 0:
-        print(f'{sleep}{g} Hesabın ban yememesi için 2 dakika bekleniyor.{rs}')
-        time.sleep(120)
+    #if n % 50 == 0:
+        #print(f'{sleep}{g} Hesabın ban yememesi için 2 dakika bekleniyor.{rs}')
+        #time.sleep(120)
     try:
         if user['username'] == "":
             continue
